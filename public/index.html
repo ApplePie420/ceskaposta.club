@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://www.ceskaposta.cz/CeskaPosta-theme/images/favicon.ico" rel="Shortcut Icon">
+
+    <title>Česká Pošta club - Registrace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <img src="./img/logo.png" alt="Česká Pošta logo" class="logoImg">
+        <h1 class="headerText">
+            Česká Pošta Club
+        </h1>
+        <h3 class="headerTextSmall">
+            Jsme jedna velká rodina
+        </h3>
+
+        <fieldset>
+            <h2>Registrace</h2>
+
+            <form action="/postDefaultLogin" method="POST">
+                <input type="text" name="email" id="email" placeholder="vasmail@mail.cz">
+                <br>
+                <input type="password" name="password" id="password" placeholder="heslo">
+                <br>
+                <input type="submit" value="Registrovat">
+            </form>
+            
+            <p>
+                <a href="/zapomenute-heslo">Zapomenuté heslo?</a>
+                <br>
+                <a href="/vlastni-email">Nemám vlastní email u cpost.cz</a>
+            </p>
+        </fieldset>
+    </div>
+</body>
+</html>

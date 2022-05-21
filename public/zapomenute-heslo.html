@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://www.ceskaposta.cz/CeskaPosta-theme/images/favicon.ico" rel="Shortcut Icon">
+    <title>Česká Pošta club - Zapomenuté heslo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <img src="./img/logo.png" alt="Česká Pošta logo" class="logoImg">
+        <h1 class="headerText">
+            Česká Pošta Club
+        </h1>
+        <h3 class="headerTextSmall">
+            Sme jedna velká rodina
+        </h3>
+
+        <fieldset>
+            <h2>
+                Obnovit heslo
+            </h2>
+            <form action="/postResetPassword" method="POST">
+                <input type="email" name="email" id="email" placeholder="vas@email.cz" required>
+                <br>
+                <input type="submit" value="Obnovit heslo">
+            </form>
+        </fieldset>
+    </div>
+    </body>
+</html>

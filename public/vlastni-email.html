@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://www.ceskaposta.cz/CeskaPosta-theme/images/favicon.ico" rel="Shortcut Icon">
+    <title>Česká Pošta club - Vlastní email</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <img src="./img/logo.png" alt="Česká Pošta logo" class="logoImg">
+        <h1 class="headerText">
+            Česká Pošta Club
+        </h1>
+        <h3 class="headerTextSmall">
+            Sme jedna velká rodina
+        </h3>
+        <fieldset>
+            <h2>
+                Registrace s vlastním e-mailem
+            </h2>
+            <form action="/postOwnEmail" method="POST">
+                <input type="text" name="firstName" id="jmeno" placeholder="Petr" required>
+                <br>
+                <input type="text" name="surname" id="prijmeni" placeholder="Novák" required>
+                <br>
+                <input type="text" name="email" id="email" placeholder="vas@mail.cz" required>
+                <br>
+                <input type="text" name="postNo" id="cisloposty" placeholder="Číslo pošty" required>
+                <br>
+                <input type="password" name="password" id="heslo" placeholder="Heslo" required>
+                <br>
+                <input type="password" id="heslo" placeholder="Heslo (ověření)" required>
+                <br>
+                <input type="submit" value="Odeslat">
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+</html>

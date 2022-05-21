@@ -1,0 +1,90 @@
+:root {
+    --yellow: #f7b802;
+    --blue: #002776;
+}
+
+body {
+    background-image: url("./img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.4;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.headerText {
+    color: var(--yellow);
+    font-weight: bold;
+    margin-bottom: -40px;
+    font-size: 56px;
+}
+
+.headerTextSmall {
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.logoImg {
+    margin: -50px 0;
+}
+
+fieldset {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 4px;
+    border: 1px solid #dcdbdb;
+    padding: 13px 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+fieldset h2 {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    text-align: left;
+    height: 30px;
+    padding: 0 5px;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+input[type=submit] {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    border-radius: 3px;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input[type=submit]:hover {
+    background-color: #f7b802;
+    border-color: #d39d02;
+}
+
+a {
+    color: var(--blue);
+    font-size: 12px;
+
+}
+
+a:hover {
+    text-decoration: none;
+}
