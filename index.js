@@ -19,7 +19,7 @@ const knex = require("knex")({
 
 // init our app
 const app = express()
-const port = process.env.PORT || 80 || 3000;
+const port = 8000;
 
 // use static files renderer and bodyparser middleware
 app.use(express.static("public"))

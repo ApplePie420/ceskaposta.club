@@ -4,9 +4,12 @@
 }
 
 body {
-    background-image: url("./img/background.jpg");
+    /* background-image: url("https://www.ceskaposta.cz/CeskaPosta-theme/images/cp/home.png"); */
+    background: rgb(234,245,252);
+    background: linear-gradient(0deg, rgba(234,245,252,1) 0%, rgba(255,255,255,1) 100%); 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
+    
 }
 
 * {
@@ -34,17 +37,13 @@ body {
     font-size: 32px;
 }
 
-.logoImg {
-    margin: -50px 0;
-}
-
 fieldset {
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 720px;
+    padding: 0;
     border-radius: 4px;
     border: 1px solid #dcdbdb;
-    padding: 13px 15px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
