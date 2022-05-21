@@ -75,6 +75,6 @@ app.post("/postOwnEmail", (req, res) => {
 })
 
 // run the app
-app.listen(port, "127.0.0.1" () => {
+app.listen(port, process.env.EXTERNAL_IP, () => {
     console.log(`app on ${port}`)
 })
