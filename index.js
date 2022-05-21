@@ -7,7 +7,7 @@ require("dotenv").config()
 
 // configure knex
 const knex = require("knex")({
-    client: "mysql",
+    client: "mysql2",
     connection: {
         host: process.env.MYSQL_HOST,
         port: process.env.MYSQL_PORT,
