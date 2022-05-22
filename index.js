@@ -41,6 +41,10 @@ app.get("/zapomenute-heslo", (req, res) => {
     res.sendFile(path.join(__dirname, "public/zapomenute-heslo.html"))
 })
 
+app.get("/zmenit-heslo", (req, res) => {
+    res.sendFile(path.join(__dirname, "public/zmenit-heslo.html"))
+})
+
 //! POST paths
 // default login form on index
 app.post("/postDefaultLogin", (req, res) => {
@@ -54,14 +58,8 @@ app.post("/postDefaultLogin", (req, res) => {
 
 // reset password form
 app.post("/zmenitHeslo", async (req, res) => {
-    // TODO: send email 
-    // generate random 16 hex bytes
     let randomString = crypto.randomBytes(8)
     randomString = randomString.toString('hex')
-    console.log(randomString)
-
-    // * TEST ACCOUNT
-    let testAcc = await nodemailer.createTestAccount()
 
     let transporter = nodemailer.createTransport({
         host: process.env.MAIL_SERVER,
