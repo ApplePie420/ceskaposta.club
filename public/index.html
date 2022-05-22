@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,22 +15,23 @@
         <a href="/">
             <img src="./img/banner2.png" alt="Česká Pošta logo" class="logoImg">
         </a>
-        
+
         <fieldset>
             <h2>Registrace</h2>
-
+            Zde se můžete zaregistrovat do zaměstnaneckého benefičního programu Club Česká Pošta.
+            <br>
             <form action="/postDefaultLogin" method="POST">
-                <input type="text" name="email" id="email" placeholder="vasmail@mail.cz">
+                <input type="email" name="email" id="email" placeholder="email@cpost.cz" required>
                 <br>
-                <input type="password" name="password" id="password" placeholder="heslo">
+                <input type="password" name="password" id="password" placeholder="vaše heslo" requred>
                 <br>
                 <input type="submit" value="Registrovat">
             </form>
-            
+
             <p>
-                <a href="/zapomenute-heslo">Zapomenuté heslo?</a>
+                <a href="/zapomenute-heslo">Zapomeněli jste své heslo?</a>
                 <br>
-                <a href="/vlastni-email">Nemám vlastní email u cpost.cz</a>
+                <a href="/vlastni-email">Nemám vlastní emailovou adresu u cpost.cz</a>
             </p>
         </fieldset>
     </div>
