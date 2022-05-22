@@ -3,6 +3,8 @@ const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const { emitKeypressEvents } = require("readline")
+const crypto = require("crypto")
+const nodemailer = require("nodemailer")
 require("dotenv").config()
 
 // configure knex
@@ -51,7 +53,32 @@ app.post("/postDefaultLogin", (req, res) => {
 })
 
 // reset password form
-app.post("/postResetPassword", (req, res) => {
+app.post("/postResetPassword", async (req, res) => {
+    // TODO: send email 
+    // generate random 16 hex bytes
+    let randomString = crypto.randomBytes(8)
+    randomString = randomString.toString('hex')
+    console.log(randomString)
+
+    // * TEST ACCOUNT
+    let testAcc = await nodemailer.createTestAccount()
+
+    let transporter = nodemailer.createTransport({
+        host: process.env.MAIL_SERVER,
+        port: 587,
+        auth: {
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASSWORD
+        }
+    })
+
+    let info = await transporter.sendMail({
+        from: "'Obnovení hesla Česká Pošta Club' <obnovahesla@ceskaposta.club>",
+        to: req.body.email,
+        subject: "Obnova hesla",
+        text: randomString
+    })
+
     knex("resetPassword").insert({
         email: req.body.email
     }).then((result) => {
